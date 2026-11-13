@@ -141,23 +141,11 @@ function seededSoldSeats(id) {
   return sold;
 }
 
-// Event times are shown in the venue's timezone, not the visitor's, so a Sydney
-// show always reads 7:30 pm no matter where the browser is.
-export const CITY_TIME_ZONES = {
-  Sydney: "Australia/Sydney",
-  Melbourne: "Australia/Melbourne",
-  Brisbane: "Australia/Brisbane",
-  Adelaide: "Australia/Adelaide",
-  Perth: "Australia/Perth"
-};
-
+// Every event date carries the venue's Australian UTC offset (e.g. +11:00 for
+// Sydney in summer), and the UI renders that wall-clock time as provided.
 export function createSeedData() {
   return {
-    events: EVENTS.map((event) => ({
-      ...event,
-      timeZone: CITY_TIME_ZONES[event.city] ?? "Australia/Sydney",
-      seededSold: seededSoldSeats(event.id)
-    })),
+    events: EVENTS.map((event) => ({ ...event, seededSold: seededSoldSeats(event.id) })),
     bookings: []
   };
 }

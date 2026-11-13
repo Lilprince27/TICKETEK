@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { formatDateParts, money } from "../lib/format.js";
 
 export default function EventCard({ event }) {
-  const date = formatDateParts(event.date, event.timeZone);
+  const date = formatDateParts(event.date);
   const soldPercent = Math.round((event.seatsSold / event.seatsTotal) * 100);
   const leftPercent = Math.max(0, 100 - soldPercent);
 

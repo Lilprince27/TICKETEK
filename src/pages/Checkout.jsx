@@ -26,7 +26,7 @@ export default function Checkout() {
     );
   }
 
-  const date = formatDateParts(selection.event.date, selection.event.timeZone);
+  const date = formatDateParts(selection.event.date);
   const groups = selection.seats.reduce((acc, seat) => {
     const group = acc.find((item) => item.tier === seat.tier);
     if (group) group.seats.push(seat);

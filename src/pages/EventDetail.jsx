@@ -61,7 +61,7 @@ export default function EventDetail() {
   }
 
   const { event, seats, rows, tiers } = data;
-  const date = formatDateParts(event.date, event.timeZone);
+  const date = formatDateParts(event.date);
   const selectedSeats = seats
     .filter((seat) => selectedIds.has(seat.id))
     .sort((a, b) => a.row.localeCompare(b.row) || a.number - b.number);

@@ -21,7 +21,6 @@ function publicEvent(event, bookings) {
     venue: event.venue,
     city: event.city,
     date: event.date,
-    timeZone: event.timeZone,
     doors: event.doors,
     gradient: event.gradient,
     fromPrice: Math.min(...seats.map((seat) => seat.price)),
@@ -37,7 +36,6 @@ function eventSnapshot(event) {
     venue: event.venue,
     city: event.city,
     date: event.date,
-    timeZone: event.timeZone,
     gradient: event.gradient
   };
 }

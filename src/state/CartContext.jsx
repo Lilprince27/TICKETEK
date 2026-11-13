@@ -21,7 +21,6 @@ function eventSnapshot(event) {
     venue: event.venue,
     city: event.city,
     date: event.date,
-    timeZone: event.timeZone,
     gradient: event.gradient
   };
 }

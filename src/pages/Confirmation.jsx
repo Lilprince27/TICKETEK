@@ -46,7 +46,7 @@ export default function Confirmation() {
     );
   }
 
-  const date = formatDateParts(booking.event.date, booking.event.timeZone);
+  const date = formatDateParts(booking.event.date);
 
   return (
     <section className="shell page narrow">
